@@ -36,6 +36,7 @@ RUN R -e 'install.packages("png", dependencies='TRUE')'
 RUN R -e 'install.packages("grid", dependencies='TRUE')'
 RUN R -e 'install.packages("rgeos", dependencies='TRUE')'
 RUN R -e 'install.packages("maptools", dependencies='TRUE')'
+RUN R -e 'install.packages("janitor", dependencies='TRUE')'
 RUN R -e 'devtools::install_github("gadenbuie/shinyThings")'
 RUN R -e 'devtools::install_github("curso-r/auth0")'
 
