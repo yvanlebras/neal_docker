@@ -58,7 +58,7 @@ RUN dpkg -i /opt/libudunits2-dev_2.2.20-1+b1_amd64.deb
 RUN apt-get install -f
 
 
-# RUN R -e 'remotes::install_local("neal-master.tar.zip", upgrade="never", INSTALL_opts = "--no-staged-install", ask = FALSE)'
+RUN R -e 'remotes::install_local("neal-master.tar.zip", upgrade="never", INSTALL_opts = "--no-staged-install", ask = FALSE)'
 
 EXPOSE 3838
 
