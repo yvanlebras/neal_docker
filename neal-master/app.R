@@ -563,7 +563,7 @@ server <- function(input, output, session) {
       nickname <- auth0_session$nickname
     nickname_path(file.path(audio_folder, nickname))
     if(!(nickname %in% list.files(audio_folder)))
-      showModal(dataModal(nickname, audio_folder))
+      nickname <- "tmp"
     if(!(nickname %in% list.files(audio_folder)))
       nickname <- "tmp"
     return(nickname)
