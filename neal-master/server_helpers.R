@@ -6,6 +6,11 @@ btw <- function(x, left, right) {
   return(x >= left & x <= right)
 }
 
+in_label_box <- function(df, point) {
+  return(btw(point$time, df$start_time, df$end_time) &
+           btw(point$frequency, df$start_freq, df$end_freq))
+}
+
 length_b10 <- function(x) {
   return(x %>%
            range %>%
@@ -32,6 +37,7 @@ frange_check <- function(vec, freq_range) {
 trim_start <- function(y) {
   start_list <- c("Common", "Eurasian", "European", "Northern", "Greater", "Great")
   y <- gsub(paste0("^", paste0(start_list, collapse="|"), " "), "", y)
+  y <- trimws(y)
   return(y)
 }
 
